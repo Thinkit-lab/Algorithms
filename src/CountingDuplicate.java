@@ -1,28 +1,36 @@
 //import java.util.Arrays;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class CountingDuplicate {
     public static void main(String[] args) {
         Duplicate result = new Duplicate();
-        System.out.println(result.duplicate("46ffg6edsdg"));
+        System.out.println(result.duplicate("indivisibilities"));
 
     }
 }
 
 class Duplicate{
     public int duplicate(String word){
-         int count = 0;
+        Set<Character> value = new TreeSet<>();
         char[] wordArr = word.toLowerCase().toCharArray();
-        System.out.println(wordArr);
-        for(int i=0; i<word.length(); i++){
+        int count = 0;
+//        System.out.println(wordArr);
+        for(int i=0; i<wordArr.length; i++){
+            value.add(wordArr[i]);
+        }
+        Character[] valueArr = value.toArray(new Character[value.size()]);
+//        System.out.println(valueArr);
+        int length = valueArr.length;
+//        System.out.println(length);
+        for(int i=0; i<length; i++){
             int singleCount = 0;
-            for(int j=i; j<word.length(); j++){
-                if(wordArr[i]==wordArr[j]){
-                    singleCount = singleCount;
-                }
+            for(int j=0; j<word.length(); j++){
 
-                else if(wordArr[i]==wordArr[j]) {
+                if(valueArr[i] == wordArr[j]) {
                     singleCount += 1;
 
                 }
