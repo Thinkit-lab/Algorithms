@@ -16,30 +16,35 @@ class Sort{
         value.add(641);
         value.add(147);
 
-        Comparator<Integer> c = new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                if(o1%10 > o2%10){
-                    return 1;
-                }
-                return -1;
-            }
-        };
 
         Iterator<Integer> iterate = value.iterator();
         for(Integer val : value){
             System.out.println(iterate.next());
         }
-        Collections.sort(value, c);
+//        Collections.sort(value, (Integer o1, Integer o2) -> (o1%10 > o2%10)?1:-1);
+        Collections.sort(value, (o1,o2)->(o1%100>o2%100)?1:-1);
 
 
         return value;
     }
+}
 
-    void iterator(){
+class Studs{
+    int rollNo, age;
+    String name;
 
+    public Studs(int rollNo, int age, String name) {
+        this.rollNo = rollNo;
+        this.age = age;
+        this.name = name;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Studs{" +
+                "rollNo=" + rollNo +
+                ", age=" + age +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
