@@ -7,11 +7,11 @@ public class Array {
 }
 
 class Calc{
-    static int sum = 0;
+    static int add = 0;
     int sum(int ... i){
         for(int num : i){
-            sum+=num;
+            add +=num;
         }
-        return sum;
+        return add;
     }
 }
