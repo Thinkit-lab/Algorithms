@@ -23,7 +23,6 @@ class Duplicate{
             value.add(wordArr[i]);
         }
         Character[] valueArr = value.toArray(new Character[value.size()]);
-//        System.out.println(valueArr);
         int length = valueArr.length;
 //        System.out.println(length);
         for(int i=0; i<length; i++){
