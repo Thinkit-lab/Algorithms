@@ -13,6 +13,8 @@ public class Substring{
 
         int strArrLen = names.length;
         String surname = "Singh";
+        StringBuilder stringBuilder = new StringBuilder(surname);
+        stringBuilder.reverse();
         int surnameLen = surname.length();
 
         for(int i = 0; i<=strArrLen-1; i++){
