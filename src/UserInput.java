@@ -7,6 +7,6 @@ public class UserInput {
         a = input.nextInt();
         b = input.nextInt();
         c = a + b;
-        System.out.println(c);
+        System.out.println(c + a);
     }
 }
