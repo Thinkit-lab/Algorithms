@@ -107,26 +107,19 @@ class Solution {
 
 class Solution2 {
     public int[] plusOne(int[] digits) {
-        int[] mod = new int[digits.length];
         StringBuilder stringBuilder = new StringBuilder();
         for(int i=0; i<digits.length; i++){
             if(i == digits.length-1){
                 digits[i]+=1;
             }
-            mod[i] = digits[i];
             stringBuilder.append(digits[i]);
         }
-        System.out.println(Arrays.toString(Arrays.stream(Arrays.stream(mod).toArray()).distinct().toArray()));
-        char str = stringBuilder.charAt(stringBuilder.length()-1);
+        System.out.println(stringBuilder);
+        int[] mod = new int[stringBuilder.length()];
+        for(int i =0; i<stringBuilder.length(); i++){
+            mod[i] = Integer.parseInt(String.valueOf(stringBuilder.charAt(i)));
 
-
-
-//        String str = mod.toString().split("");
-//        String
-//        int[] result = new int[];
-
-        System.out.println(stringBuilder.length());
-        System.out.println(Arrays.toString(mod));
-        return  null;
+        }
+        return  (mod);
     }
 }
