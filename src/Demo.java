@@ -3,9 +3,9 @@ import java.util.*;
 public class Demo {
     public static void main(String[] args) {
         Kata3 kata3 = new Kata3();
-        Challenge3 challenge = new Challenge3();
+        Challenge5 challenge = new Challenge5();
         Solution2 solution = new Solution2();
-        System.out.println(Arrays.toString(solution.plusOne(new int[]{4, 3, 9})));
+        System.out.println(challenge.autocorrect("We have sent the deliverables to you."));
 
     }
 }
@@ -123,3 +123,42 @@ class Solution2 {
         return  (mod);
     }
 }
+
+class Challenge4 {
+    public List<Integer> splitInteger(int num, int parts) {
+        List<Integer> result = new ArrayList<>();
+        for(int i=0; i<parts; i++){
+            if(num%parts == 0){
+                result.add(num/parts);
+            }
+        }
+        for(int i=0; i<parts; i++){
+            if(num%parts != 0){
+                result.add(num/parts);
+                num = num-(num/parts);
+                parts = parts-1;
+            }
+//         else{
+//           result.add(num/parts);
+//         }
+        }
+        return result;
+    }
+}
+
+class Challenge5 {
+    public String autocorrect(String input) {
+        String inputLower = input.toLowerCase();
+        String[] splitstr = input.split(" ");
+        String newInput = "";
+        for(String str : splitstr){
+            if(Objects.equals(str, "you.")){
+                str = "your client.";
+            }
+            newInput = newInput + " " +str;
+        }
+
+        return newInput.trim();
+    }
+}
+
